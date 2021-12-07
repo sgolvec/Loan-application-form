@@ -1,5 +1,6 @@
 import React from 'react';
 import Input from '../Input';
+import CustomDatePicker from '../UI/DatePicker';
 import Header from '../UI/Header';
 import Label from '../UI/Label';
 
@@ -75,7 +76,7 @@ const Stage1 = ({ setInput, basicInfo }) => {
         <div>
           <Label title='Date of Birth' lFor='dateofbirth' />
 
-          <Input
+          {/* <Input
             type='date'
             id='dateofbirth'
             name='dateofbirth'
@@ -83,6 +84,11 @@ const Stage1 = ({ setInput, basicInfo }) => {
             required
             onChange={(e) => setInput('dateofbirth', e.target.value)}
             value={basicInfo.dateofbirth}
+          /> */}
+          <CustomDatePicker
+            value={basicInfo.dateofbirth}
+            setDate={setInput}
+            dataType='dateofbirth'
           />
         </div>
       </div>
