@@ -123,6 +123,7 @@ export default function LoanApplication() {
             ...creditInfo,
             ...loanInfo,
             _subject: `Loan Application from ${basicInfo.firstname} ${basicInfo.lastname} (${basicInfo.email})`,
+            dateofbirth: basicInfo.dateofbirth.toLocaleDateString(),
           }),
         });
 
@@ -173,6 +174,7 @@ export default function LoanApplication() {
                     title={stage3 ? 'Submit' : 'Next'}
                     type='submit'
                     isLoading={status === 'loading'}
+                    isDisabled={!basicInfo.dateofbirth}
                     onClick={() => {
                       if (stage3) {
                         setButtonState('submit');
