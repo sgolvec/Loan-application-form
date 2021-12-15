@@ -209,33 +209,51 @@ const Stage3 = ({ setInput, loanInfo, isFoodBasket }) => {
 
       <div className='mt-8'>
         {!isFoodBasket && (
-          <div className='mb-8'>
-            <Label title='Loan Type' lFor='loantype' />
+          <>
+            <div className='mb-8'>
+              <Label title='Loan Type' lFor='loantype' />
 
-            <select
-              className='w-full my-auto bg-white py-3 px-5 border-gray-200 rounded-md mr-2 focus:outline-none  focus:border-blue-500 border-2 placeholder-gray-400'
-              id='loantype'
-              name='loantype'
-              onChange={(e) => setInput('loantype', e.target.value)}
-              value={loanInfo.loantype}
-              required
-            >
-              <option>Select Loan Type</option>
+              <select
+                className='w-full my-auto bg-white py-3 px-5 border-gray-200 rounded-md mr-2 focus:outline-none  focus:border-blue-500 border-2 placeholder-gray-400'
+                id='loantype'
+                name='loantype'
+                onChange={(e) => setInput('loantype', e.target.value)}
+                value={loanInfo.loantype}
+                required
+              >
+                <option>Select Loan Type</option>
 
-              <option value='Paylater Rent'>Paylater Rent</option>
-              <option value='Paylater Transport Fare'>
-                Paylater Transport Fare
-              </option>
-              <option value='Paylater School Fees'>Paylater School Fees</option>
-              <option value='Paylater Transport Medical Fees'>
-                Paylater Transport Medical Fees
-              </option>
-              <option value='Paylater Moni'>Paylater Moni</option>
-            </select>
-          </div>
+                <option value='Paylater Rent'>Paylater Rent</option>
+                <option value='Paylater Transport Fare'>
+                  Paylater Transport Fare
+                </option>
+                <option value='Paylater School Fees'>
+                  Paylater School Fees
+                </option>
+                <option value='Paylater Transport Medical Fees'>
+                  Paylater Transport Medical Fees
+                </option>
+                <option value='Paylater Moni'>Paylater Moni</option>
+              </select>
+            </div>
+
+            <div className='mb-8'>
+              <Label title='Loan amount' lFor='loanamount' />
+
+              <Input
+                type='text'
+                id='loanamount'
+                name='loanamount'
+                placeholder='500,000'
+                required
+                onChange={(e) => setInput('loanamount', e.target.value)}
+                value={loanInfo.loanamount}
+              />
+            </div>
+          </>
         )}
 
-        {/* tenor */}
+        {/* tenor and installments */}
         {isFoodBasket ? (
           <div className='mb-8'>
             <Label title='Installments' lFor='installments' />
